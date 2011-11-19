@@ -11,7 +11,16 @@
 	Welcome to our amazing Movie Store!
 </p>
 <p>	
-	Click <a href="/movielist.jsp"> here</a> to display the movies list.
+	Click <a href="movielist"> here</a> to display the movies list.
+	
+</p>
+<p>	
+	Click <a href="addmovie.jsp"> here</a> to add movie to the list.
+	
+</p>
+<p>
+	
+	Click <a href="staticList.jsp"> here</a> to display the static movies list.
 </p>
 </body>
 </html>

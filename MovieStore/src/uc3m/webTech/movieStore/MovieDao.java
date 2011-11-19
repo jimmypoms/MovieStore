@@ -28,11 +28,6 @@ public class MovieDao {
 		manager.persist(newMovie);
 		transaction.commit();
 		
-		// Show persisted movies. (DEBUG)
-		System.out.println("Check movie inserted in db");
-		for (Movie movie : getMovieList()) {
-			System.out.println(movie);
-		}
 	}
 	
 	public List<Movie> getMovieList(){

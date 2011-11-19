@@ -44,13 +44,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/jlib/jpa/javax.persistence_2.0.3.v201010191057.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/jpa/eclipselink-jpa-modelgen_2.3.1.v20111018-r10243.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/moxy/com.sun.tools.xjc_2.2.0.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/moxy/com.sun.xml.bind_2.2.0.v201004141950.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/moxy/javax.activation_1.1.0.v201005080500.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/moxy/javax.mail_1.4.0.v201005080615.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/moxy/javax.xml.bind_2.2.0.v201005080402.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/moxy/javax.xml.stream_1.0.1.v201004272200.jar"/>
-	<classpathentry kind="lib" path="lib/jlib/sdo/commonj.sdo_2.1.1.v200905221342.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.core_2.3.1.v20111018-r10243.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
