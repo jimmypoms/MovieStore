@@ -1,3 +1,8 @@
 MovieStore/build
 MovieStore/.classpath
-MovieStore/.settings/**/*
+MovieStore/.settings
+MovieStore/.project
+
+.classpath
+.settings
+.project
