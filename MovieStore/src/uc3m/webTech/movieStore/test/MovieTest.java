@@ -1,4 +1,6 @@
-package uc3m.webTech.movieStore;
+package uc3m.webTech.movieStore.test;
+
+import uc3m.webTech.movieStore.MovieDao;
 
 
 public class MovieTest {
