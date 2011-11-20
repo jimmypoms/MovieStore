@@ -2,7 +2,12 @@ MovieStore/build
 MovieStore/.classpath
 MovieStore/.settings
 MovieStore/.project
+MovieStore/derby.log
+MovieStore/moviestore
+MovieStore/lib
 
 .classpath
 .settings
 .project
+MovieStore/derby.log
+MovieStore/moviestore

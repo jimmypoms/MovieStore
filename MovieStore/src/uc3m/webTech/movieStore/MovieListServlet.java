@@ -28,7 +28,7 @@ public class MovieListServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		movieDao.addMovie(request.getAttribute("title").toString(), Integer.parseInt(request.getAttribute("year").toString()));
 	}
 
 }
