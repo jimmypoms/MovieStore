@@ -33,7 +33,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/jlib/jpa/javax.persistence_2.0.3.v201010191057.jar"/>
+	<classpathentry kind="lib" path="/git/MovieStore/MovieStore/lib/javax.persistence_2.0.3.v201010191057.jar"/>
 	<classpathentry kind="lib" path="lib/jlib/jpa/eclipselink-jpa-modelgen_2.3.1.v20111018-r10243.jar"/>
 	<classpathentry kind="lib" path="lib/jlib/moxy/com.sun.tools.xjc_2.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/jlib/moxy/com.sun.xml.bind_2.2.0.v201004141950.jar"/>
