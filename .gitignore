@@ -9,3 +9,6 @@ MovieStore/lib
 .classpath
 .settings
 .project
+MovieStore/login.properties
+MovieStore/src/META-INF
+MovieStore/WebContent/META-INF/persistence.xml

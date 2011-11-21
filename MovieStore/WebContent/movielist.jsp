@@ -14,11 +14,11 @@
 	<h3>Add Movie:</h3>
 	<FORM action="movielist" method="post">
 		<P>
-			<LABEL for="title">Title: </LABEL> <INPUT type="text" id="title"><BR>
+			<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title"><BR>
 			<LABEL for="description">Description: </LABEL> <INPUT type="text"
-				id="description"><BR> <LABEL for="year">Year: </LABEL>
-			<INPUT type="text" id="year"><BR> <INPUT type="submit"
-				value="Send"> <INPUT type="reset">
+				name="description"><BR> <LABEL for="year">Year: </LABEL>
+			<INPUT type="text" name="year"><BR> <INPUT type="submit"
+				value="Add Movie"> <INPUT type="reset">
 		</P>
 	</FORM>
 

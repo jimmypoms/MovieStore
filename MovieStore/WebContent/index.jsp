@@ -11,7 +11,7 @@
 	Welcome to our amazing Movie Store!
 </p>
 <p>	
-	Click <a href="movielist.jsp"> here</a> to display the movies list.
+	Click <a href="movielist"> here</a> to display the movies list.
 </p>
 </body>
 </html>
