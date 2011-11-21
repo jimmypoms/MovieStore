@@ -5,6 +5,7 @@
 	<persistence-unit name="MovieStore" transaction-type="RESOURCE_LOCAL">
  	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
  	<class>uc3m.webTech.movieStore.Movie</class>
+ 	<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby:moviestore;create=true"/>
