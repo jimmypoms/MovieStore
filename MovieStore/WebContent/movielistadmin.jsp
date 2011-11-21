@@ -11,6 +11,17 @@
 </head>
 
 <body>
+	<h3>Add Movie:</h3>
+	<FORM action="movielistadmin" method="post">
+		<P>
+			<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title"><BR>
+			<LABEL for="synopsis">Synopsis: </LABEL> <INPUT type="text"
+				name="synopsis"><BR> <LABEL for="year">Year: </LABEL>
+			<INPUT type="text" name="year"><BR> <INPUT type="submit"
+				value="Add Movie"> <INPUT type="reset">
+		</P>
+	</FORM>
+
 	<h3>Movie List:</h3>
 	<hr>
 	<ol>
@@ -20,7 +31,10 @@
 			if (movies != null) {
 				for (Movie movie : movies) {
 		%>
-		<li><%=movie.getTitle() + " (" + Integer.valueOf(movie.getYear()) + ")"%></li>
+		<li><%=movie.getTitle() + " (" + Integer.valueOf(movie.getYear()) + ")"%> 
+		<FORM action="deletemovie" method="post">
+		<input type="hidden" name="movieid" value=<%=movie.getId().toString()%>>
+		<INPUT type="submit" value="Delete"></FORM></li>
 		<%
 			}
 			}

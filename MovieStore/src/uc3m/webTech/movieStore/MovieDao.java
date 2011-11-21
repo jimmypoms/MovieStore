@@ -19,12 +19,13 @@ public class MovieDao {
 		manager=managerFactory.createEntityManager();
 	}
 	
-	public void addMovie(String title, int year){
+	public void addMovie(String title, int year, String synopsis){
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();
 		Movie newMovie = new Movie();
 		newMovie.setTitle(title);
 		newMovie.setYear(year);
+		newMovie.setSynopsis(synopsis);
 		manager.persist(newMovie);
 		transaction.commit();
 		
@@ -40,7 +41,14 @@ public class MovieDao {
 		@SuppressWarnings("unchecked")
 		List<Movie> movies = query.getResultList();
 		return movies;
-		
+	}
+	
+	public void deleteMovie(int id){
+		Query q = manager.createQuery("DELETE FROM Movie m WHERE m.id = " + id);
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		q.executeUpdate();
+		transaction.commit();
 	}
 
 }

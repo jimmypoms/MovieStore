@@ -19,6 +19,9 @@ public class Movie {
 	private String synopsis;
 	private Genre genre;
 
+	public Long getId() {
+		return id;
+	}
 	
 	public int getYear() {
 		return year;

@@ -13,5 +13,8 @@
 <p>	
 	Click <a href="movielist"> here</a> to display the movies list.
 </p>
+<p>	
+	Click <a href="movielistadmin"> here</a> to add movies.
+</p>
 </body>
 </html>

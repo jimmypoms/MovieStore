@@ -5,7 +5,7 @@ import uc3m.webTech.movieStore.MovieDao;
 
 public class MovieTest {
 
-	public static void addMovie(String title, int year) {
+	public static void addMovie(String title, int year, String synopsis) {
 //		EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("MovieStore");
 //		EntityManager manager = managerFactory.createEntityManager();
 //		// Add a movie.
@@ -25,10 +25,10 @@ public class MovieTest {
 //			System.out.println(movie);
 //		}
 		MovieDao movieDao=new MovieDao();
-		movieDao.addMovie(title, year);
+		movieDao.addMovie(title, year, synopsis);
 	}
 
 	public static void main(String... args) {
-		addMovie(args[0], Integer.parseInt(args[1]));
+		addMovie(args[0], Integer.parseInt(args[1]), args[2]);
 	}
 }
