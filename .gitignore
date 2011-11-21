@@ -1,6 +1,5 @@
 MovieStore/build
 MovieStore/.classpath
-MovieStore/.settings
 MovieStore/.project
 MovieStore/derby.log
 MovieStore/moviestore
@@ -10,5 +9,4 @@ MovieStore/lib
 .settings
 .project
 MovieStore/login.properties
-MovieStore/src/META-INF
 MovieStore/WebContent/META-INF/persistence.xml
