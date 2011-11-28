@@ -11,20 +11,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MovieServlet
+ * Servlet implementation class MovieListServlet
  */
+<<<<<<< HEAD
 @WebServlet(name="MovieListServlet", urlPatterns={"/movielist"})
+=======
+@WebServlet("/movielist")
+>>>>>>> 34ddbc11d53245bce0579ec9562a2c7f45c947a7
 public class MovieListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	private MovieDao movieDao;
        
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public MovieListServlet() {
         //super();
         movieDao = new MovieDao(); //should be injected from context
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 		// Display the list of movies:
 		
 //        request.setAttribute("movies",movieDao.getMovieList() );
@@ -51,4 +61,9 @@ public class MovieListServlet extends HttpServlet {
 		
 	}
 
+=======
+		request.setAttribute("movies",movieDao.getMovieList() );
+        request.getRequestDispatcher("/movielist.jsp").forward(request, response);
+    }
+>>>>>>> 34ddbc11d53245bce0579ec9562a2c7f45c947a7
 }

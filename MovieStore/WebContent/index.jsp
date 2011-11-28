@@ -12,6 +12,7 @@
 </p>
 <p>	
 	Click <a href="movielist"> here</a> to display the movies list.
+<<<<<<< HEAD
 	
 </p>
 <p>	
@@ -21,6 +22,11 @@
 <p>
 	
 	Click <a href="staticList.jsp"> here</a> to display the static movies list.
+=======
+</p>
+<p>	
+	Click <a href="movielistadmin"> here</a> to add movies.
+>>>>>>> 34ddbc11d53245bce0579ec9562a2c7f45c947a7
 </p>
 </body>
 </html>
