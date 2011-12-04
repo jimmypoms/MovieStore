@@ -8,17 +8,18 @@
 <html>
 <head>
 <title>Movie List from DB</title>
+<script src="ValidateMovie.js" type="text/javascript"></script>
 </head>
 
 <body>
 	<h3>Add Movie:</h3>
-	<FORM action="movielistadmin" method="post">
+	<FORM name="addMovieForm"action="movielistadmin" method="post">
 		<P>
-			<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title"><BR>
+			<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title" ><BR>
 			<LABEL for="synopsis">Synopsis: </LABEL> <INPUT type="text"
 				name="synopsis"><BR> <LABEL for="year">Year: </LABEL>
-			<INPUT type="text" name="year"><BR> <INPUT type="submit"
-				value="Add Movie"> <INPUT type="reset">
+			<INPUT type="text" name="year" ><BR> <INPUT type="submit"
+				value="Add Movie" onclick="return validate()"> <INPUT type="reset">
 		</P>
 	</FORM>
 
@@ -42,7 +43,5 @@
 	</ol>
 	<hr>
 
-	<iframe src="http://www.objectdb.com/pw.html?jee-eclipse"
-		frameborder="0" scrolling="no" width="100%" height="30"> </iframe>
 </body>
 </html>
