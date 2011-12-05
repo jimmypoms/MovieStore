@@ -1,13 +1,6 @@
 package uc3m.webTech.movieStore;
 
-import javax.persistence.*;
-
-@Entity
 public class Actor {
-	
-	@Id
-	@GeneratedValue()
-	private Long id;
 	
 	private String displayName;//eg Joe Smith
 	private String orderName;//eg Smith, Joe

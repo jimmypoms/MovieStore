@@ -1,8 +1,6 @@
 package uc3m.webTech.movieStore;
 
 import java.io.IOException;
-
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,19 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class DeleteMovieServlet
  */
-@WebServlet(name="DeleteMovieServlet", urlPatterns={"/deletemovie"})
+@WebServlet("/deletemovie")
 public class DeleteMovieServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	// Injected DAO EJB:
-	@EJB MovieDao movieDao;
-	//private MovieDao movieDao;
+	private MovieDao movieDao;
        
-    
-//    public DeleteMovieServlet() {
-//        super();
-//        movieDao = new MovieDao(); //should be injected from context
-//    }
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DeleteMovieServlet() {
+        super();
+        movieDao = new MovieDao(); //should be injected from context
+    }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
