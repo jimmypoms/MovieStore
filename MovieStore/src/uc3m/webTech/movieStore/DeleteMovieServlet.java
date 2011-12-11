@@ -16,15 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 public class DeleteMovieServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	// Injected DAO EJB:
-	@EJB MovieDao movieDao;
-	//private MovieDao movieDao;
+	
+	private MovieDao movieDao;
        
     
-//    public DeleteMovieServlet() {
-//        super();
-//        movieDao = new MovieDao(); //should be injected from context
-//    }
+    public DeleteMovieServlet() {
+        super();
+        movieDao = new MovieDao(); 
+    }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

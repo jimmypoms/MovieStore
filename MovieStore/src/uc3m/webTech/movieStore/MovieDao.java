@@ -13,33 +13,28 @@ import javax.persistence.Query;
 
 @Stateless
 public class MovieDao {
+
+	private EntityManagerFactory managerFactory;
+	private EntityManager em;
 	
-	// Injected database connection:
-    @PersistenceContext private EntityManager em;
-	
-//	private EntityManagerFactory managerFactory;
-//	private EntityManager manager;
-//	
-//	public MovieDao(){
-//		managerFactory=Persistence.createEntityManagerFactory("MovieStore");
-//		manager=managerFactory.createEntityManager();
-//	}
+	public MovieDao(){
+		managerFactory=Persistence.createEntityManagerFactory("MovieStore");
+		em=managerFactory.createEntityManager();
+	}
 	
 	public void addMovie(String title, int year, String synopsis){
-//		EntityTransaction transaction = manager.getTransaction();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		Movie newMovie = new Movie();
 		newMovie.setTitle(title);
 		newMovie.setYear(year);
 		newMovie.setSynopsis(synopsis);
-//		manager.persist(newMovie);
+		em.persist(newMovie);
 		transaction.commit();
 		
 	}
 	
 	public List<Movie> getMovieList(){
-//		Query query = manager.createQuery("SELECT m from Movie m");
 		Query query = em.createQuery("SELECT m from Movie m");
 		@SuppressWarnings("unchecked")
 		List<Movie> movies = query.getResultList();
@@ -47,8 +42,6 @@ public class MovieDao {
 	}
 	
 	public void deleteMovie(int id){
-//		Query q = manager.createQuery("DELETE FROM Movie m WHERE m.id = " + id);
-//		EntityTransaction transaction = manager.getTransaction();
 		Query q = em.createQuery("DELETE FROM Movie m WHERE m.id = " + id);
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();

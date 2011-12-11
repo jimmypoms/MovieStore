@@ -9,6 +9,17 @@
     <servlet-name>MovieListServlet</servlet-name>
     <url-pattern>/movielist</url-pattern>
   </servlet-mapping>
+ <resource-env-ref>
+  <description>
+    Object factory for MovieDao instances.
+  </description>
+  <resource-env-ref-name>
+    movieDao/MovieDaoFactory
+  </resource-env-ref-name>
+  <resource-env-ref-type>
+    uc3m.webTech.movieStore.MovieDao
+  </resource-env-ref-type>
+</resource-env-ref>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
