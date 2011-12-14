@@ -19,8 +19,9 @@
 					<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title"><BR>
 					<LABEL for="actors">Actors:</LABEL> <input type="text" name="actors"><BR>
 					<LABEL for="synopsis">Synopsis: </LABEL> 
-						<textarea rows="3" cols="20" name="synopsis"></textarea><BR> 
+						<textarea name="synopsis"></textarea><BR> 
 					<LABEL for="year">Year:</LABEL> <INPUT type="text" name="year"><BR> 
+					<label></label>
 					<INPUT type="submit" value="Add Movie" onclick="return validate()"> 
 					<INPUT type="reset">
 				</P>
@@ -35,13 +36,13 @@
 					if (movies != null) {
 						for (Movie movie : movies) {
 				%>
-				<li><%=movie.getTitle() + " ("
-							+ Integer.valueOf(movie.getYear()) + ")"%>
-					<FORM action="deletemovie" method="post">
+				<li><FORM action="deletemovie" method="post">
+					<label><%=movie.getTitle() + " ("
+							+ Integer.valueOf(movie.getYear()) + ")"%></label>
 						<input type="hidden" name="movieid"
 							value=<%=movie.getId().toString()%>> <INPUT type="submit"
 							value="Delete">
-					</FORM></li>
+				</FORM></li>
 				<%
 					}
 					}
