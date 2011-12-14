@@ -17,10 +17,12 @@
 			<FORM name="addMovieForm" action="movielistadmin" method="post">
 				<P>
 					<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title"><BR>
-					<LABEL for="synopsis">Synopsis: </LABEL> <INPUT type="text"
-						name="synopsis"><BR> <LABEL for="year">Year:
-					</LABEL> <INPUT type="text" name="year"><BR> <INPUT
-						type="submit" value="Add Movie" onclick="return validate()"> <INPUT type="reset">
+					<LABEL for="actors">Actors:</LABEL> <input type="text" name="actors"><BR>
+					<LABEL for="synopsis">Synopsis: </LABEL> 
+						<textarea rows="3" cols="20" name="synopsis"></textarea><BR> 
+					<LABEL for="year">Year:</LABEL> <INPUT type="text" name="year"><BR> 
+					<INPUT type="submit" value="Add Movie" onclick="return validate()"> 
+					<INPUT type="reset">
 				</P>
 			</FORM>
 			

@@ -35,8 +35,9 @@ public class MovieListAdminServlet extends HttpServlet {
 		checkTitle(title);
 		String synopsis = request.getParameter("synopsis");
 		String year = request.getParameter("year");
+		String actors = request.getParameter("actors");
 		checkYear(year);
-		movieDao.addMovie(title, Integer.parseInt(year), synopsis);
+		movieDao.addMovie(title, Integer.parseInt(year), synopsis, actors);
 		
 		doGet(request, response);
 	}

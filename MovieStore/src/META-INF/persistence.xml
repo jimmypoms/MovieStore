@@ -3,18 +3,22 @@
 		xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" 
 		version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="MovieStore" transaction-type="RESOURCE_LOCAL">
- 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<!-- 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+
 		<class>uc3m.webTech.movieStore.Movie</class>
 		<class>uc3m.webTech.movieStore.Actor</class>
- 	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<class>uc3m.webTech.movieStore.User</class>
+		<class>uc3m.webTech.movieStore.Purchase</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
-<!--			<property name="javax.persistence.jdbc.url" value="jdbc:derby:moviestore;create=true"/> -->
-				<property name="javax.persistence.jdbc.url" value="jdbc:derby:/media/DATA/webTech/derbyDB/moviestore;create=true"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:/git/MovieStore/MovieStore/moviestore;create=true"/>
+<!--			<property name="javax.persistence.jdbc.url" value="jdbc:derby:moviestore;create=true"/>-->
 <!--			<property name="javax.persistence.jdbc.user" value="admin" />-->
 <!--			<property name="javax.persistence.jdbc.password" value="" />-->
 			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+			<property name="javax.persistence.jdbc.user" value=""/>
 		</properties>
 	</persistence-unit>
 </persistence>

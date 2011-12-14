@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
  
-#home, #movie, #admin  {
+#home, #movie, #admin, #newuser  {
   width: 800px;
   margin: 0 auto;
 }

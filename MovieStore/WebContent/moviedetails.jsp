@@ -13,23 +13,22 @@
 		<%@ include file="header"%>
 
 		<section id="content">
-			<h3>Movie List:</h3>
+			<h3>Movie Details:</h3>
 			<hr>
-			<ol>
-				<%
-					@SuppressWarnings("unchecked")
-					List<Movie> movies = (List<Movie>) request.getAttribute("movies");
-					if (movies != null) {
-						for (Movie movie : movies) {
-				%>
-				<li><a href=<%="movielist?q=" + movie.getId().toString()%>>
-					<%=movie.getTitle() + " (" + Integer.valueOf(movie.getYear()) + ")"%>
-				</a></li>
-				<%
-					}
-					}
-				%>
-			</ol>
+			<%
+				Movie movie = (Movie) request.getAttribute("movie");
+				if (movie != null) {
+					out.print("<h2>" + movie.getTitle() + 
+							" (" + Integer.valueOf(movie.getYear()) + ")"
+							+ "</h2>");
+					out.print("Actors: " + movie.getActors() + "<br><hr>");
+					out.print(movie.getSynopsis());
+					
+				}
+				else {
+					out.print("<b>Invalid Movie</b>");
+				}
+			%>
 			<hr>
 		</section>
 		<%@ include file='footer'%>
