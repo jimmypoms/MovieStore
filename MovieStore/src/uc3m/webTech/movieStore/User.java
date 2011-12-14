@@ -7,6 +7,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 @Entity
+@Table(name="movieStoreUser") //a table can't be called User, it's a reserved word
 public class User {
 	@Id
 	@GeneratedValue()
@@ -16,7 +17,7 @@ public class User {
 	private int age;
 	private String username;	
 	private String password;
-	private String LastSession;
+	private String lastSession;
 	private Set<Purchase> purchaseHistory;
 	
 	
@@ -26,14 +27,22 @@ public class User {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", surname=" + surname + ", age=" + age
+				+ ", username=" + username + ", LastSession=" + lastSession
+				+ "]";
+	}
+
+
 	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     
 	public void setLastSession(){
     	Date date = new Date();
-    	this.LastSession=dateFormat.format(date);
+    	this.lastSession=dateFormat.format(date);
     }
     public String getLastSession(){
-    	return LastSession;
+    	return lastSession;
     }
     
     public void setName(String n){

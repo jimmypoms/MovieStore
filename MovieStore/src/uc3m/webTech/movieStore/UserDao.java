@@ -11,41 +11,43 @@ import javax.persistence.Query;
 
 
 @Stateless
-public class MovieDao {
-
+public class UserDao {
+	
 	private EntityManagerFactory managerFactory;
 	private EntityManager em;
 	
-	public MovieDao(){
+	public UserDao(){
 		managerFactory=Persistence.createEntityManagerFactory("MovieStore");
 		em=managerFactory.createEntityManager();
 	}
 	
-	public void addMovie(String title, int year, String synopsis){
+	public void addUser(String userName, String pswd, String name,
+			String surname, int age){
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
-		Movie newMovie = new Movie();
-		newMovie.setTitle(title);
-		newMovie.setYear(year);
-		newMovie.setSynopsis(synopsis);
-		em.persist(newMovie);
+		User newUser = new User();
+		newUser.setUsername(userName);
+		newUser.setPassword(pswd);
+		newUser.setName(name);
+		newUser.setSurname(surname);
+		newUser.setAge(age);
+		em.persist(newUser);
 		transaction.commit();
-		
 	}
 	
-	public List<Movie> getMovieList(){
-		Query query = em.createQuery("SELECT m from Movie m");
-		@SuppressWarnings("unchecked")
-		List<Movie> movies = query.getResultList();
-		return movies;
-	}
-	
-	public void deleteMovie(int id){
-		Query q = em.createQuery("DELETE FROM Movie m WHERE m.id = " + id);
+	public void removeUser(int id){
+		Query q = em.createQuery("DELETE FROM User u WHERE u.id = " + id);
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		q.executeUpdate();
 		transaction.commit();
+	}
+	
+	public List<User> getUserList(){
+		Query query = em.createQuery("SELECT u from User u");
+		@SuppressWarnings("unchecked")
+		List<User> users = query.getResultList();
+		return users;
 	}
 
 }
