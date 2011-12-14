@@ -15,7 +15,7 @@ public class Movie {
 	private int year;
 	private String indent;
 	private Set<String> languageCodes;
-	private Set<Actor> actors;
+	private String actors;
 	private String synopsis;
 	private Genre genre;
 
@@ -44,10 +44,10 @@ public class Movie {
 	public void setLanguageCodes(Set<String> languageCodes) {
 		this.languageCodes = languageCodes;
 	}
-	public Set<Actor> getActors() {
+	public String getActors() {
 		return actors;
 	}
-	public void setActors(Set<Actor> actors) {
+	public void setActors(String actors) {
 		this.actors = actors;
 	}
 	public String getSynopsis() {

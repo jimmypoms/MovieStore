@@ -30,9 +30,15 @@ public class MovieListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.setAttribute("movies",movieDao.getMovieList() );
-        request.getRequestDispatcher("/movielist.jsp").forward(request, response);
+		String id = (String)request.getParameter("q");
+		if (id!=null){
+			request.setAttribute("movie", movieDao.getMovieById(Long.decode(id)));
+			request.getRequestDispatcher("/moviedetails.jsp").forward(request, response);
+		}
+		else {
+			request.setAttribute("movies",movieDao.getMovieList() );
+			request.getRequestDispatcher("/movielist.jsp").forward(request, response);
+		}
     }
 
 }

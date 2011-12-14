@@ -17,10 +17,13 @@
 			<FORM name="addMovieForm" action="movielistadmin" method="post">
 				<P>
 					<LABEL for="title">Title: </LABEL> <INPUT type="text" name="title"><BR>
-					<LABEL for="synopsis">Synopsis: </LABEL> <INPUT type="text"
-						name="synopsis"><BR> <LABEL for="year">Year:
-					</LABEL> <INPUT type="text" name="year"><BR> <INPUT
-						type="submit" value="Add Movie" onclick="return validate()"> <INPUT type="reset">
+					<LABEL for="actors">Actors:</LABEL> <input type="text" name="actors"><BR>
+					<LABEL for="synopsis">Synopsis: </LABEL> 
+						<textarea name="synopsis"></textarea><BR> 
+					<LABEL for="year">Year:</LABEL> <INPUT type="text" name="year"><BR> 
+					<label></label>
+					<INPUT type="submit" value="Add Movie" onclick="return validate()"> 
+					<INPUT type="reset">
 				</P>
 			</FORM>
 			
@@ -33,13 +36,13 @@
 					if (movies != null) {
 						for (Movie movie : movies) {
 				%>
-				<li><%=movie.getTitle() + " ("
-							+ Integer.valueOf(movie.getYear()) + ")"%>
-					<FORM action="deletemovie" method="post">
+				<li><FORM action="deletemovie" method="post">
+					<label><%=movie.getTitle() + " ("
+							+ Integer.valueOf(movie.getYear()) + ")"%></label>
 						<input type="hidden" name="movieid"
 							value=<%=movie.getId().toString()%>> <INPUT type="submit"
 							value="Delete">
-					</FORM></li>
+				</FORM></li>
 				<%
 					}
 					}

@@ -15,7 +15,7 @@
 	
 		<%@ include file="header"%>
 		<section id="content">
-			<h3>Add Movie:</h3>
+			<h3>Add User:</h3>
 			<FORM name="newUserForm" action="newuser" method="post">
 				<P>
 					<LABEL for="username">User Name: </LABEL> <INPUT type="text" name="username"><BR>
@@ -23,6 +23,7 @@
 					<LABEL for="name">Name:	</LABEL> <INPUT type="text" name="name"><BR>
 					<LABEL for="surname">Surname:	</LABEL> <INPUT type="text" name="surname"><BR>
 					<LABEL for="age">Age:	</LABEL> <INPUT type="text" name="age"><BR>
+					<label></label>
 					<INPUT type="submit" value="Add User" onclick="return validate()">
 					<INPUT type="reset">
 				</P>

@@ -10,3 +10,6 @@ MovieStore/lib
 .settings
 .project
 MovieStore/login.properties
+MovieStore/src/META-INF
+
+
