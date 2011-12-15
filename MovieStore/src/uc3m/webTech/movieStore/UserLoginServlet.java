@@ -2,6 +2,7 @@ package uc3m.webTech.movieStore;
 
 import java.io.IOException;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ public class UserLoginServlet extends HttpServlet {
 	
 	public UserLoginServlet(){
 		super();
-		userDao=new UserDao();
+		userDao=UserDao.getInstance();
 	}
 	
     
@@ -47,16 +48,25 @@ public class UserLoginServlet extends HttpServlet {
 		
 		User user;
 		user = userDao.checkUser(userName,password);
-		
+
 		if (user == null){
 			System.out.println("Invalid username or password! Please try again! ");
 			System.out.println("New user? You can sign up here!");
 		}
 		else{
-			System.out.println("User Details:");
-			System.out.println("-------------");
-			System.out.println(user.toString());
+			HttpSession session = request.getSession(true);
+			user.setSession(session.getId());
+			user.setLastLogin();
 		}
+
+		
+		//TEST ------> check if the user is actually added to DB
+				System.out.println("USER LIST --------------------->>>>>>>");
+				List<User> users = userDao.getUserList();
+				for(User u : users)
+					System.out.println(u.toString());
+				System.out.println("<<<<<<<---------------------");
+		
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 		//doGet(request, response);
 	}

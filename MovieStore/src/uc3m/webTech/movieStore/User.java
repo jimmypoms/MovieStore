@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name="movieStoreUser") //a table can't be called User, it's a reserved word
-public class User {
+public class User implements Comparable{
 	@Id
 	@GeneratedValue()
 	private Long id;
@@ -18,8 +18,10 @@ public class User {
 	private String username;	
 	private String password;
 	private String lastSession;
+	private String session;
 	private Set<Purchase> purchaseHistory;
 	
+	public boolean isAdmin;
 	
 	
 	public Long getId(){
@@ -30,14 +32,14 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", surname=" + surname + ", age=" + age
-				+ ", username=" + username + ", LastSession=" + lastSession
-				+ "]";
+				+ ", username=" + username + ",SessionID=" + session +
+				", LastSession=" + lastSession + "]";
 	}
 
 
 	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     
-	public void setLastSession(){
+	public void setLastLogin(){
     	Date date = new Date();
     	this.lastSession=dateFormat.format(date);
     }
@@ -85,5 +87,29 @@ public class User {
 	}
 	public Set<Purchase> getPurchaseHistory(){
 		return purchaseHistory;
+	}
+
+
+	public String getSession() {
+		return session;
+	}
+
+
+	public void setSession(String session) {
+		this.session = session;
+	}
+	
+	@Override
+	public boolean equals(Object u) {
+		if (u instanceof User)
+			return id.equals(((User)u).getId());
+		return false;
+	}
+
+
+	@Override
+	public int compareTo(Object u) {
+		if (this.equals(u)) return 0;
+		else return -1;
 	}
 }

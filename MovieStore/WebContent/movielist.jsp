@@ -1,6 +1,6 @@
 <%@page contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.util.*,uc3m.webTech.movieStore.Movie"%>
+<%@page import="java.util.*,uc3m.webTech.movieStore.Movie,uc3m.webTech.movieStore.User"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,10 @@
 		<%@ include file="header"%>
 
 		<section id="content">
+		<% 
+		User u = (User) request.getAttribute("user");
+		if (u != null) out.print(u.getName());
+		%>
 			<h3>Movie List:</h3>
 			<hr>
 			<ol>
@@ -22,7 +26,7 @@
 					if (movies != null) {
 						for (Movie movie : movies) {
 				%>
-				<li><a href=<%="movielist?q=" + movie.getId().toString()%>>
+				<li><a href=<%="movielist?id=" + movie.getId().toString()%>>
 					<%=movie.getTitle() + " (" + Integer.valueOf(movie.getYear()) + ")"%>
 				</a></li>
 				<%
