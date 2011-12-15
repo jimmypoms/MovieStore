@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name="UserLoginServlet", urlPatterns={"/login"})
@@ -45,9 +46,9 @@ public class UserLoginServlet extends HttpServlet {
 			throw new IllegalArgumentException();
 		
 		User user;
-	
 		user = userDao.checkUser(userName,password);
-		if (user.equals(null)){
+		
+		if (user == null){
 			System.out.println("Invalid username or password! Please try again! ");
 			System.out.println("New user? You can sign up here!");
 		}
@@ -56,7 +57,6 @@ public class UserLoginServlet extends HttpServlet {
 			System.out.println("-------------");
 			System.out.println(user.toString());
 		}
-		
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 		//doGet(request, response);
 	}
