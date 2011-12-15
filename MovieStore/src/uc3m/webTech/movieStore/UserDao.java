@@ -13,12 +13,23 @@ import javax.persistence.Query;
 @Stateless
 public class UserDao {
 	
+	private static UserDao instance = new UserDao();
+	
 	private EntityManagerFactory managerFactory;
 	private EntityManager em;
+
+	private List<User> users;
 	
-	public UserDao(){
+	private UserDao(){
 		managerFactory=Persistence.createEntityManagerFactory("MovieStore");
 		em=managerFactory.createEntityManager();
+		
+		Query query = em.createQuery("SELECT u from User u");
+		users = query.getResultList();
+	}
+	
+	public static UserDao getInstance(){
+		return instance;
 	}
 	
 	public void addUser(String userName, String pswd, String name,
@@ -44,19 +55,24 @@ public class UserDao {
 	}
 	
 	public List<User> getUserList(){
-		Query query = em.createQuery("SELECT u from User u");
-		@SuppressWarnings("unchecked")
-		List<User> users = query.getResultList();
 		return users;
 	}
 	
 	public User checkUser(String usrname,String pass){
-		List<User> users=getUserList();
 		for(User u : users){
 			if (u.getUsername().equals(usrname)&&u.getPassword().equals(pass)){
 					return u;				
 			}
 			
+		}
+		return null;
+	}
+
+	public User getUser(String sessionID) {
+		String session;
+		for (User u : users){
+			session = u.getSession();
+			if (session != null && session.equals(sessionID)) return u;
 		}
 		return null;
 	}

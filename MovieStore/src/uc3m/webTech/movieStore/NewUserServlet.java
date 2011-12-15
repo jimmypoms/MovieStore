@@ -18,7 +18,7 @@ public class NewUserServlet extends HttpServlet {
     
     public NewUserServlet() {
         super();
-        userDao=new UserDao();
+        userDao=UserDao.getInstance();
     }
 
 	
