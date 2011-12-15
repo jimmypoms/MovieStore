@@ -56,6 +56,9 @@ public class UserLoginServlet extends HttpServlet {
 			System.out.println("-------------");
 			System.out.println(user.toString());
 		}
+		
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		//doGet(request, response);
 	}
 
 }

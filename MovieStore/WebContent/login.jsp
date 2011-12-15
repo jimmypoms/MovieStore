@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/styles.css" />
+<script src="ValidateLogin.js" type="text/javascript"></script>
 <title>Login</title>
 </head>
 <body>
@@ -24,6 +25,10 @@
 				</P>
 			</FORM>
 		</section>
+		
+		<p>
+			New user? Registrate <a href="newuser"> here</a>.
+		</p>
 		<%@include file='footer' %>				
 	</div>
 

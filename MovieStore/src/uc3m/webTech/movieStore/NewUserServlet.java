@@ -58,6 +58,9 @@ public class NewUserServlet extends HttpServlet {
 		for(User u : users)
 			System.out.println(u.toString());
 		System.out.println("<<<<<<<---------------------");
+			
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		//doGet(request, response);
 	}
 	
 }
