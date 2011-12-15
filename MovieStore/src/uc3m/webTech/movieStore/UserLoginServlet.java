@@ -47,6 +47,7 @@ public class UserLoginServlet extends HttpServlet {
 			throw new IllegalArgumentException();
 		
 		User user;
+		HttpSession session=null;
 		user = userDao.checkUser(userName,password);
 
 		if (user == null){
@@ -54,7 +55,7 @@ public class UserLoginServlet extends HttpServlet {
 			System.out.println("New user? You can sign up here!");
 		}
 		else{
-			HttpSession session = request.getSession(true);
+			session = request.getSession(true);
 			user.setSession(session.getId());
 			user.setLastLogin();
 		}
@@ -66,8 +67,10 @@ public class UserLoginServlet extends HttpServlet {
 				for(User u : users)
 					System.out.println(u.toString());
 				System.out.println("<<<<<<<---------------------");
-		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+					
+		session.setAttribute("userName", userName);
+		//request.setAttribute("userName", userName);
+		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
 		//doGet(request, response);
 	}
 

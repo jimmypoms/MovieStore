@@ -13,9 +13,9 @@
 		<%@ include file="header"%>
 
 		<section id="content">
-		<% 
+		<% /* 
 		User u = (User) request.getAttribute("user");
-		if (u != null) out.print(u.getName());
+		if (u != null) out.print(u.getName()); */
 		%>
 			<h3>Movie List:</h3>
 			<hr>
