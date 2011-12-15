@@ -49,5 +49,16 @@ public class UserDao {
 		List<User> users = query.getResultList();
 		return users;
 	}
+	
+	public User checkUser(String usrname,String pass){
+		List<User> users=getUserList();
+		for(User u : users){
+			if (u.getUsername().equals(usrname)&&u.getPassword().equals(pass)){
+					return u;				
+			}
+			
+		}
+		return null;
+	}
 
 }
