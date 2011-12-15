@@ -5,7 +5,8 @@
    	 		<li id=homeLink ><a href="/MovieStore">Home</a></li>
    			<li id=movieLink ><a href="movielist">Movies</a><li>
    			<li id=adminLink ><a href="movielistadmin">Admin</a><li>
-   			<li id=newuserLink ><a href="newuser">New User</a><li> 
+   			<li id=newuserLink ><a href="newuser">New User</a><li>
+   			<li id=loginLink ><a href="login">Login</a><li>  
    		</ul>
    	</nav>
 </header>
